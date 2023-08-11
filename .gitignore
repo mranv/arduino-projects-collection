@@ -1,0 +1,74 @@
+# ===== Build artifacts =====
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+*.bin
+*.class
+
+# Arduino / PlatformIO build directories
+.pioenvs/
+.piolibdeps/
+.pio/
+.pio/build/
+build/
+.fakegt/
+
+# ===== Apple / iOS / Xcode =====
+**/Carthage/
+*.swiftmodule
+*.swiftdoc
+*.dSYM/
+*.xcuserdatad/
+xcuserdata/
+*.xcodeproj/xcuserdata/
+DerivedData/
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+*.egg
+
+# ===== Node =====
+node_modules/
+bower_components/
+jspm_packages/
+
+# ===== Java =====
+*.class
+target/
+.gradle/
+out/
+
+# ===== Secrets / credentials (never commit) =====
+.env
+.env.*
+*.local
+*.mobileprovision
+*.provisionprofile
+
+# ===== OS & editor cruft =====
+.DS_Store
+.AppleDouble
+.LSOverride
+.Icon?
+.DS_Store?
+._*
+.Swift/
+*.iml
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+*.suo
+*.user
+*.sdf
+*.opensdf
+*.pdb
+Thumbs.db
+ehthumbs.db
+Desktop.ini
