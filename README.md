@@ -21,6 +21,7 @@ name. Open a sketch in the Arduino IDE, wire the schematic, and build along.
 - [Getting started](#getting-started)
 - [Project layout (per project)](#project-layout-per-project)
 - [Notes & conventions](#notes--conventions)
+- [Security](#security)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -29,14 +30,23 @@ name. Open a sketch in the Arduino IDE, wire the schematic, and build along.
 ## Repository structure
 
 ```
-├─ README.md              # this file
-├─ LICENSE                # MIT
+├─ README.md                # this file
+├─ LICENSE                  # MIT
 ├─ .gitignore
 ├─ .gitattributes
 ├─ CONTRIBUTING.md
 ├─ CODEOWNERS
-├─ PROJECTS.md            # full 494-project index / catalog
-└─ <Project Name>/        # one folder per project
+├─ CODE_OF_CONDUCT.md
+├─ PROJECTS.md             # full 494-project index / catalog
+├─ .github/
+│  ├─ FUNDING.yml          # GitHub Sponsors (Anubhav Gain / mranv)
+│  ├─ SECURITY.md          # vulnerability policy + credential audit
+│  ├─ FUNDING.md
+│  ├─ ISSUE_TEMPLATE/
+│  │  ├─ bug_report.md
+│  │  └─ feature_request.md
+│  └─ PULL_REQUEST_TEMPLATE.md
+└─ <Project Name>/          # one folder per project
    ├─ Code/              # Arduino sketches (*.ino / *.pde)
    ├─ Schematics/        # circuit diagrams (images / PDFs)
    └─ ...other assets/
@@ -118,6 +128,24 @@ preserved as-is.
 - Firmware `.hex` dumps, `.aia` App Inventor projects and `.apk` binaries are
   treated as **source assets** for these reference projects and are committed.
 
+## Security
+
+Curated by **Anubhav Gain** — *Security Engineer | Rust Developer | Cloud
+Infrastructure | Open Source Contributor* ([@mranv](https://github.com/mranv),
+[mranv.github.io](https://mranv.github.io)).
+
+**Report vulnerabilities privately** — open a [private GitHub Security
+Advisory](https://github.com/mranv/arduino-projects-collection/security/advisories)
+or email `iamanubhavgain@gmail.com` (subject: **SECURITY**).
+
+A static scan during curation found **23 sketches that likely embed Wi-Fi
+credentials** (SSID + password) and several more embedding IoT service tokens
+(Blynk / Firebase / Hue). These are usually **demo/placeholder** values — but
+treat any key found here as **compromised** if you reuse the code. Move real
+credentials out of source via a `secrets.h` file (gitignored) or environment
+variables. See [`.github/SECURITY.md`](./.github/SECURITY.md) for the full
+credential policy and audit breakdown.
+
 ## Contributing
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md). In short: file-level fixes, wiring
@@ -132,4 +160,6 @@ contents of that folder; otherwise the top-level MIT license applies.
 
 ---
 
-> Curated and maintained by **Anubhav Gain** — <https://github.com/mranv>
+> Curated and maintained by **Anubhav Gain** — *Security Engineer | Rust Developer | Cloud Infrastructure | Open Source Contributor* ·
+> [GitHub @mranv](https://github.com/mranv) · [mranv.github.io](https://mranv.github.io) · [@AnubhavGain](https://twitter.com/AnubhavGain) ·
+> [☕ Sponsor on GitHub Sponsors](https://github.com/sponsors/mranv)
